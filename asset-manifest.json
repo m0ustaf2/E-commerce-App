@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/E-commerce-App/static/css/main.14f1a0b3.css",
+    "main.js": "/E-commerce-App/static/js/main.efa84727.js",
+    "static/media/light-patten.svg": "/E-commerce-App/static/media/light-patten.ed706aff39a009de4e80.svg",
+    "static/media/slider-2.jpeg": "/E-commerce-App/static/media/slider-2.92200ddb54f84e0e8c71.jpeg",
+    "static/media/fa-solid-900.ttf": "/E-commerce-App/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/grocery-banner.png": "/E-commerce-App/static/media/grocery-banner.2c56649c9cbe2e19b86f.png",
+    "static/media/fa-brands-400.ttf": "/E-commerce-App/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/grocery-banner-2.jpeg": "/E-commerce-App/static/media/grocery-banner-2.7a4a78a90acc3d5847cb.jpeg",
+    "static/media/fa-solid-900.woff2": "/E-commerce-App/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/error.svg": "/E-commerce-App/static/media/error.084f5f5b0eb10d3216cb7c939108e1f6.svg",
+    "static/media/fa-brands-400.woff2": "/E-commerce-App/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/MasterCard_Logo.svg.png": "/E-commerce-App/static/media/MasterCard_Logo.svg.654f470c44810125552e.png",
+    "static/media/fa-regular-400.ttf": "/E-commerce-App/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/americanexpress.jpg": "/E-commerce-App/static/media/americanexpress.d7644056296648510b25.jpg",
+    "static/media/360_F_371954077_optGuvGbji51IXB3MuJsodhSqTD0sd3W.jpg": "/E-commerce-App/static/media/360_F_371954077_optGuvGbji51IXB3MuJsodhSqTD0sd3W.489f093500875a925491.jpg",
+    "static/media/PayPal-Logo.png": "/E-commerce-App/static/media/PayPal-Logo.fd0fa1abff9cf9bdef53.png",
+    "static/media/fa-regular-400.woff2": "/E-commerce-App/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/freshcart-logo.svg": "/E-commerce-App/static/media/freshcart-logo.53f7a424c3aedc30a0fb46dc2278137c.svg",
+    "static/media/fa-v4compatibility.ttf": "/E-commerce-App/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/amazonpay-logo-rgb-clr.svg": "/E-commerce-App/static/media/amazonpay-logo-rgb-clr.5012b605d17363e2be4fb0e50182b3cb.svg",
+    "static/media/fa-v4compatibility.woff2": "/E-commerce-App/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "static/media/slick.svg": "/E-commerce-App/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/E-commerce-App/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/E-commerce-App/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/E-commerce-App/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/E-commerce-App/index.html",
+    "main.14f1a0b3.css.map": "/E-commerce-App/static/css/main.14f1a0b3.css.map",
+    "main.efa84727.js.map": "/E-commerce-App/static/js/main.efa84727.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14f1a0b3.css",
+    "static/js/main.efa84727.js"
+  ]
+}
