@@ -27,7 +27,7 @@ export default function Login({saveUserData}) {
 // console.log(data.data);
   setisloading(false)
   notify("success","success")
-  navigate('/')
+  navigate('/E-commerce-App')
 }
   }).catch((error)=>{
     if(error.response.status==401)

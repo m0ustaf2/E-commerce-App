@@ -49,6 +49,7 @@ export default function App() {
 const Routes=createBrowserRouter([
   {path:'',element:<Layout setUserData={setUserData}  userData={userData} logout={logout}/>,children:[
     {index:true,element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
+    {path:'E-commerce-App',element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
     {path:'register',element:<Register/>},
     {path:'forget-password',element:<ForgetPassword/>},
     {path:'reset-password',element:<ResetPassword/>},
@@ -67,7 +68,7 @@ const Routes=createBrowserRouter([
 
   return (
     <>
-     {/* <Offline><Disconnected/></Offline> */}
+     <Offline><Disconnected/></Offline>
 
     <ToastContainer theme='colored'
     style={{ marginTop:50 }}/>

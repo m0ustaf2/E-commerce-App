@@ -10,7 +10,7 @@ let{numOfCartItems}=useContext(cartContext)
     <>
    <nav className="navbar navbar-expand-lg bg-main-light  position-sticky top-0">
   <div className="container">
-    <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/E-commerce-App">
     <img src={logo} alt="logo" />
 
     </Link>
@@ -36,8 +36,8 @@ let{numOfCartItems}=useContext(cartContext)
       </li></>:""}
       </ul>
       <ul className="navbar-nav  ms-auto mb-2 mb-lg-0">
-      <div className='icon'>
-      <li className="nav-item  d-flex align-items-center">
+      <div className='icon  d-flex align-items-center'>
+      <li className="nav-item">
           <i className='fab mx-2  fa-facebook cursor-pointer'></i>
           <i className='fab mx-2 fa-twitter cursor-pointer'></i>
           <i className='fab mx-2 fa-instagram cursor-pointer'></i>
