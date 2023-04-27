@@ -21,6 +21,7 @@ import { Offline } from 'react-detect-offline';
 import Disconnected from './Components/Disconnected/Disconnected';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
+import AllOrders from './Components/AllOrders/AllOrders';
 
 
 export default function App() {
@@ -54,6 +55,7 @@ const Routes=createBrowserRouter([
     {path:'forget-password',element:<ForgetPassword/>},
     {path:'reset-password',element:<ResetPassword/>},
     {path:'brands',element: <ProtectedRoute userData={userData}> <Brands/> </ProtectedRoute>},
+    {path:'allorders',element: <ProtectedRoute userData={userData}> <AllOrders userData={userData}/> </ProtectedRoute>},
     {path:'profile',element: <ProtectedRoute userData={userData}> <Profile userData={userData}/> </ProtectedRoute>},
     {path:'brandproducts/:id',element: <ProtectedRoute userData={userData}> <BrandProducts/> </ProtectedRoute>},
     {path:'checkout',element:<ProtectedRoute userData={userData}><CheckOut/></ProtectedRoute>},
@@ -72,7 +74,7 @@ const Routes=createBrowserRouter([
 
     <ToastContainer theme='colored'
     style={{ marginTop:50 }}/>
-    <CartContextProvider>
+    <CartContextProvider userData={userData}>
       <Toaster
      toastOptions={{
       style: {

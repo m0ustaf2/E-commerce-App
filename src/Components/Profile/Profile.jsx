@@ -5,7 +5,7 @@ export default function Profile({userData}) {
   console.log(userData);
   return (
 <>
-<Helmet>
+{/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>Profile</title>
                 
@@ -15,7 +15,7 @@ export default function Profile({userData}) {
         <h3>Name : <span className='text-main'>{userData?.name}</span></h3>
         <h3 className='my-4'>Your Id : <span className='text-main'>{userData.id}</span></h3>
         <h3>Role: <span className='text-main'>{userData?.role}</span></h3>
-     </div>
+     </div> */}
 </>
   )
 }

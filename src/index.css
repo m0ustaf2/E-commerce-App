@@ -110,9 +110,18 @@ a , a:hover{
     .slid{
         height: 200px;
     }
+    .slid2{
+        height: 100px;
+    }
     .icon{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .car{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }

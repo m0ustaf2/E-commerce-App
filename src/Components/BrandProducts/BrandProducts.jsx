@@ -16,7 +16,7 @@ export default function BrandProducts() {
     // console.log(response);
 
        setnumOfCartItems(response.data.numOfCartItems)
-       toast.success(response.data.message,{duration:2000})
+       toast.success(response.data.message,{duration:1000})
        
      }
      else{

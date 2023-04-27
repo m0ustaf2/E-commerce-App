@@ -18,7 +18,7 @@ export default function Home() {
    if(response?.data?.status === 'success')
     {
       setnumOfCartItems(response.data.numOfCartItems)
-      toast.success(response.data.message,{duration:2000})
+      toast.success(response.data.message,{duration:1000})
       
     }
     else{

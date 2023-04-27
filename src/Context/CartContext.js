@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react'
 
+
+
 export let cartContext=createContext(null);
 
 
 
-export default function CartContextProvider({children}) {
-    const [cartId, setcartId] = useState(null)
+export default function CartContextProvider({children,userData}) {
+// console.log(userData);
+   const [cartId, setcartId] = useState(null)
     const [numOfCartItems, setnumOfCartItems] = useState(0)
     async function getCart(){
          let response=await getLoggedUserCart();
@@ -15,7 +18,9 @@ export default function CartContextProvider({children}) {
               setnumOfCartItems(response.data.numOfCartItems)
               setcartId(response.data.data._id)
          }
-         console.log(response);
+        
+        
+         // console.log(response);
      }
  
      useEffect(()=>{
@@ -36,15 +41,15 @@ export default function CartContextProvider({children}) {
         }).then((response)=> response).catch((error)=> error)
      }
 
-     function getLoggedUserCart(productId)
+     function getLoggedUserCart()
       {
         return   axios.get(`https://route-ecommerce-app.vercel.app/api/v1/cart`,
         {
               headers:headers
-        }).then((response)=> response).catch((error)=> error)
+        }).then((response)=> response).catch((error)=>error)
+        
       }
-
-
+     
          function removeItem(productId)
          {
             return   axios.delete(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}`,

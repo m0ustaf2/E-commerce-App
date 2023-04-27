@@ -33,7 +33,11 @@ let{numOfCartItems}=useContext(cartContext)
         {numOfCartItems}
         </span>
         </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link ms-2" to="/allorders">All orders</Link>
       </li></>:""}
+      
       </ul>
       <ul className="navbar-nav  ms-auto mb-2 mb-lg-0">
       <div className='icon  d-flex align-items-center'>
@@ -49,7 +53,7 @@ let{numOfCartItems}=useContext(cartContext)
        {userData?
         <>
       <li className="nav-item">
-        <Link to={'/profile'} className="nav-link  text-main">Hello,{userData?.name}</Link>
+        <Link  className="nav-link  text-main">Hello,{userData?.name}</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link"  onClick={logout}>Logout</Link>

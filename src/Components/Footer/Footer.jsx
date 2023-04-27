@@ -6,15 +6,16 @@ export default function Footer() {
      <footer className='bg-main-light  my-5 py-3 mb-auto'>
    <div className="container">
    <h2>Get the FreshCart app</h2>
-    <p className='text-muted'>We will send you a link,open it on your phone to download the app.</p>
+    {/* <p className='text-muted'>We will send you a link,open it on your phone to download the app.</p> */}
+    <p className='text-muted'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, blanditiis?</p>
     <form>
       <div className="row">
         <div className="col-md-10">
-          <input type="email" placeholder='Email..' className='form-control' />
+          <input disabled  type="email" placeholder='Email..' className='form-control' />
         </div>
         
         <div className="col-md-2 uu">
-          <button className='btn bg-main text-white'>Share App Link</button>
+          <button disabled className='btn bg-main text-white'>Share App Link</button>
         </div>
       
        <div className=" d-flex justify-content-between  border-top border-bottom my-4 ">
