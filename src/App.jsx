@@ -32,6 +32,8 @@ export default function App() {
   let encodedToken=localStorage.getItem('userToken');
   let decodedToken=jwtDecode(encodedToken);
   setUserData(decodedToken);
+  localStorage.setItem('userData',JSON.stringify( decodedToken))
+
   // console.log(decodedToken);
   }
   let logout=()=>{
@@ -71,9 +73,9 @@ const Routes=createBrowserRouter([
   return (
     <>
      <Offline><Disconnected/></Offline>
-
     <ToastContainer theme='colored'
     style={{ marginTop:50 }}/>
+
     <CartContextProvider userData={userData}>
       <Toaster
      toastOptions={{

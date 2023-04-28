@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Loading from '../Loading/Loading';
 
-export default function AllOrders({userData}) {
-   console.log(userData);
+export default function AllOrders() {
+
+    let userData=localStorage.getItem('userData')
+    userData=(JSON.parse(userData));
 
 const [allOrders, setallOrders] = useState(null)
    async function getAllOrders(){
@@ -17,7 +19,7 @@ const [allOrders, setallOrders] = useState(null)
     }
    }
            
- useState(function(){
+ useEffect(function(){
     getAllOrders()
  },[])
 

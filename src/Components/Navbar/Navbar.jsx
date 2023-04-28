@@ -42,11 +42,19 @@ let{numOfCartItems}=useContext(cartContext)
       <ul className="navbar-nav  ms-auto mb-2 mb-lg-0">
       <div className='icon  d-flex align-items-center'>
       <li className="nav-item">
-          <i className='fab mx-2  fa-facebook cursor-pointer'></i>
+      <a target={'_blank'} href="https://www.facebook.com/profile.php?id=100004498818792&mibextid=ZbWKwL">
+          <i className='fab fa-facebook mx-2'></i>
+          </a>
           <i className='fab mx-2 fa-twitter cursor-pointer'></i>
-          <i className='fab mx-2 fa-instagram cursor-pointer'></i>
-          <i className='fab mx-2 fa-tiktok cursor-pointer'></i>
-          <i className='fab mx-2 fa-linkedin cursor-pointer '></i>
+          <a target={'_blank'} href="https://instagram.com/mostafa_2sma3el?igshid=ZmZhODViOGI=">
+          <i className='fab fa-instagram mx-2'></i>
+          </a>
+          <a target={'_blank'} href="https://github.com/m0ustaf2">
+          <i className='fa-brands fa-github mx-2'></i>
+          </a>
+          <a target={'_blank'} href="https://www.linkedin.com/in/mostafa-esmail-912910218/">
+          <i className='fa-brands fa-linkedin-in mx-2'></i>
+          </a>
           <i className='fab mx-2 fa-youtube cursor-pointer'></i>
         </li>
       </div>
