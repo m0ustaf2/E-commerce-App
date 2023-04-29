@@ -101,6 +101,8 @@ export default function Cart({userData}) {
             let response= await clearCart();
           setcartDetails(response.data.data);
           setnumOfCartItems(response.data.numOfCartItems)
+          toast.error("No Products in the cart")
+          nav('/')
           })()
 
           swalWithBootstrapButtons.fire(
