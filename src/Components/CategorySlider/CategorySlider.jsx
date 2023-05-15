@@ -6,7 +6,7 @@ export default function CategorySlider() {
  const [categories, setCategories] = useState([])
  const getAllCategories = async ()=>{
   try {
-    let {data}= await axios.get(`https://route-ecommerce-app.vercel.app/api/v1/categories`)
+    let {data}= await axios.get(`https://ecommerce.routemisr.com/api/v1/categories`)
 //   console.log(data.data);
   setCategories(data.data)
   } catch (error) {
@@ -30,11 +30,11 @@ export default function CategorySlider() {
   return (
     <>
     <div className="my-5">
-      <h3>Shop Popular Categories</h3>
+      <h3 className='text-main'>Shop Popular Categories</h3>
    <Slider {...settings} autoplaySpeed={3000}>
      {categories.map((item)=>{
     return  <div key={item._id}>
-    <img  src={item.image} height={200} className='w-100 slid2' alt={item.name} />
+    <img  src={item.image} height={300} className='w-100 slid2' alt={item.name} />
     <h6 className='ctg text-main'>{item.name}</h6>
   </div>
      })}

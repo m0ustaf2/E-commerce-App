@@ -35,7 +35,7 @@ export default function Cart({userData}) {
     {
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-          confirmButton: 'btn btn-success',
+          confirmButton: 'btn btn-success mx-1',
           cancelButton: 'btn btn-danger'
         },
         buttonsStyling: false
@@ -176,11 +176,13 @@ export default function Cart({userData}) {
 
     
    <div className='text-center'>
-   <button className='btn bg-main my-3'>
+   
       <Link className='text-white' to={'/checkout'}>
-      checkout
+      <button className='btn text-white bg-main my-3'>
+        Checkout
+      </button>
       </Link>
-    </button>
+
    </div>
   
   </div>:<Loading/>}

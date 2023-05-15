@@ -17,6 +17,7 @@ export default function CartContextProvider({children,userData}) {
          {
               setnumOfCartItems(response.data.numOfCartItems)
               setcartId(response.data.data._id)
+              console.log(response.data.data._id);
          }
         
         
@@ -33,7 +34,7 @@ export default function CartContextProvider({children,userData}) {
        }
        function addToCart(productId)
      {
-        return   axios.post(`https://route-ecommerce-app.vercel.app/api/v1/cart`,{
+        return   axios.post(`https://ecommerce.routemisr.com/api/v1/cart`,{
             productId:productId
         },
         {
@@ -43,7 +44,7 @@ export default function CartContextProvider({children,userData}) {
 
      function getLoggedUserCart()
       {
-        return   axios.get(`https://route-ecommerce-app.vercel.app/api/v1/cart`,
+        return   axios.get(`https://ecommerce.routemisr.com/api/v1/cart`,
         {
               headers:headers
         }).then((response)=> response).catch((error)=>error)
@@ -52,14 +53,14 @@ export default function CartContextProvider({children,userData}) {
      
          function removeItem(productId)
          {
-            return   axios.delete(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}`,
+            return   axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
                {
                      headers:headers
                }).then((response)=> response).catch((error)=> error)
            }
          function clearCart()
          {
-            return   axios.delete(`https://route-ecommerce-app.vercel.app/api/v1/cart`,
+            return   axios.delete(`https://ecommerce.routemisr.com/api/v1/cart`,
                {
                      headers:headers
                }).then((response)=> response).catch((error)=> error)
@@ -67,7 +68,7 @@ export default function CartContextProvider({children,userData}) {
 
          function updateProductCount(productId,count)
          {
-            return   axios.put(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}`,
+            return   axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
             {
                count:count
             },
@@ -80,7 +81,7 @@ export default function CartContextProvider({children,userData}) {
 
            function onlinePayment(cartId,shippingAddress)
            {
-            return   axios.post(`https://route-ecommerce-app.vercel.app/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000`,
+            return   axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000`,
             {
                shippingAddress:shippingAddress
             },

@@ -34,7 +34,7 @@ export default function ProductDetailes() {
   {
    try {
     setisLoading(true)
-    let{data} =await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`)
+    let{data} =await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
     setProductDtls(data.data);
     setcat(data.data.category)
     setisLoading(false)

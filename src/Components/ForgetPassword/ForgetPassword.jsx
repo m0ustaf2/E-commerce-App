@@ -21,7 +21,7 @@ export default function ForgetPassword() {
      async function forgotPassword(value)
       {
     setisloading(true)
-        let {data}=await axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/forgotPasswords`,value)
+        let {data}=await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,value)
         console.log(data);
     setisloading(false)
 
@@ -45,7 +45,7 @@ export default function ForgetPassword() {
       async function resetPassword(value)
       {
     setisloading(true)
-let {data}=await axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/verifyResetCode`,value).catch((err)=>{
+let {data}=await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,value).catch((err)=>{
     setisloading(false)
 
 // console.log(err);

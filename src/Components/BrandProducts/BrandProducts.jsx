@@ -35,7 +35,7 @@ let {id}= useParams()
    {
     try {
         setisLoading(true)
-    let {data}=await axios.get(`https://route-ecommerce.onrender.com/api/v1/products`,{
+    let {data}=await axios.get(`https://ecommerce.routemisr.com/api/v1/products`,{
         params : {'brand': id}
     })
     // console.log(data.data);

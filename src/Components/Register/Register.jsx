@@ -18,7 +18,7 @@ export default function Register() {
   function handelRegister(values)
   {
     setisloading(true)
-  axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`, values).then((data)=>{
+  axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`, values).then((data)=>{
     if(data.status==201)
 {
   setisloading(false)

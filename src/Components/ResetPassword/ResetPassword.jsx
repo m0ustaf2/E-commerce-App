@@ -18,7 +18,7 @@ export default function ResetPassword() {
      async function handelLogin(values)
       {
         setisloading(true)
-    let {data}= await axios.put(`https://route-ecommerce.onrender.com/api/v1/auth/resetPassword` , values).catch((error)=>{
+    let {data}= await axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword` , values).catch((error)=>{
        setisloading(false)
        notify('error',error.response.data.errors.msg)
        console.log(data);
