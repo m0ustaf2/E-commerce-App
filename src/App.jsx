@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Navigate, RouterProvider, createBrowserRouter} from 'react-router-dom';
+import {Navigate, RouterProvider, createBrowserRouter, createHashRouter} from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 import Layout from './Components/Layout/Layout';
@@ -49,7 +49,7 @@ export default function App() {
     }
   }, [])
 
-const Routes=createBrowserRouter([
+const Routes=createHashRouter([
   {path:'',element:<Layout setUserData={setUserData}  userData={userData} logout={logout}/>,children:[
     {index:true,element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
     {path:'E-commerce-App',element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
