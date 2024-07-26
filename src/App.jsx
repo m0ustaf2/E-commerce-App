@@ -1,93 +1,132 @@
-import React, { useEffect, useState } from 'react'
-import {Navigate, RouterProvider, createBrowserRouter, createHashRouter} from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
-
-import Layout from './Components/Layout/Layout';
-import Home from './Components/Home/Home';
-import Register from './Components/Register/Register';
-import Login from './Components/Login/Login';
-import Notfound from './Components/Notfound/Notfound';
-import { ToastContainer } from 'react-toastify';
-import ProductDetailes from './Components/ProductDetailes/ProductDetailes';
-import Brands from './Components/Brands/Brands';
-import Cart from './Components/Cart/Cart';
-import BrandProducts from './Components/BrandProducts/BrandProducts';
-import jwtDecode from 'jwt-decode';
-import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
-import Profile from './Components/Profile/Profile';
-import CartContextProvider from './Context/CartContext';
-import CheckOut from './Components/CheckOut/CheckOut';
-import { Offline } from 'react-detect-offline';
-import Disconnected from './Components/Disconnected/Disconnected';
-import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
-import ResetPassword from './Components/ResetPassword/ResetPassword';
-import AllOrders from './Components/AllOrders/AllOrders';
-
+import { Toaster } from "react-hot-toast";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import { Offline } from "react-detect-offline";
+import { ToastContainer } from "react-toastify";
+import AllOrders from "./Components/AllOrders/AllOrders";
+import BrandProducts from "./Components/BrandProducts/BrandProducts";
+import Brands from "./Components/Brands/Brands";
+import Cart from "./Components/Cart/Cart";
+import CheckOut from "./Components/CheckOut/CheckOut";
+import Disconnected from "./Components/Disconnected/Disconnected";
+import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
+import Home from "./Components/Home/Home";
+import Layout from "./Components/Layout/Layout";
+import Login from "./Components/Login/Login";
+import Notfound from "./Components/Notfound/Notfound";
+import ProductDetailes from "./Components/ProductDetailes/ProductDetailes";
+import Profile from "./Components/Profile/Profile";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import Register from "./Components/Register/Register";
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
+import CartContextProvider from "./Context/CartContext";
 
 export default function App() {
-
-  const [userData, setUserData] = useState(null);
-  function saveUserData()
-  {
-  let encodedToken=localStorage.getItem('userToken');
-  let decodedToken=jwtDecode(encodedToken);
-  setUserData(decodedToken);
-  localStorage.setItem('userData',JSON.stringify( decodedToken))
-
-  // console.log(decodedToken);
-  }
-  let logout=()=>{
-    localStorage.removeItem('userToken');
-    setUserData(null)
-    return <Navigate to='/login'/>
-   
-  }
-  useEffect(() => {
-    if(localStorage.getItem('userToken') !== null && userData== null)
+  const Routes = createHashRouter([
     {
-      saveUserData();
-    }
-  }, [])
+      path: "",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "E-commerce-App",
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
+        },
+        { path: "register", element: <Register /> },
+        { path: "forget-password", element: <ForgetPassword /> },
+        { path: "reset-password", element: <ResetPassword /> },
+        {
+          path: "brands",
+          element: (
+            <ProtectedRoute>
+              <Brands />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "allorders",
+          element: (
+            <ProtectedRoute>
+              <AllOrders />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "profile",
+          element: (
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "brandproducts/:id",
+          element: (
+            <ProtectedRoute>
+              <BrandProducts />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "checkout",
+          element: (
+            <ProtectedRoute>
+              <CheckOut />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "cart",
+          element: (
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          ),
+        },
+        { path: "login", element: <Login /> },
+        {
+          path: "product-details/:id",
+          element: (
+            <ProtectedRoute>
+              <ProductDetailes/>
+            </ProtectedRoute>
+          ),
+        },
 
-const Routes=createHashRouter([
-  {path:'',element:<Layout setUserData={setUserData}  userData={userData} logout={logout}/>,children:[
-    {index:true,element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
-    {path:'E-commerce-App',element:<ProtectedRoute userData={userData}> <Home/> </ProtectedRoute>},
-    {path:'register',element:<Register/>},
-    {path:'forget-password',element:<ForgetPassword/>},
-    {path:'reset-password',element:<ResetPassword/>},
-    {path:'brands',element: <ProtectedRoute userData={userData}> <Brands/> </ProtectedRoute>},
-    {path:'allorders',element: <ProtectedRoute userData={userData}> <AllOrders userData={userData}/> </ProtectedRoute>},
-    {path:'profile',element: <ProtectedRoute userData={userData}> <Profile userData={userData}/> </ProtectedRoute>},
-    {path:'brandproducts/:id',element: <ProtectedRoute userData={userData}> <BrandProducts/> </ProtectedRoute>},
-    {path:'checkout',element:<ProtectedRoute userData={userData}><CheckOut/></ProtectedRoute>},
-    {path:'cart',element: <ProtectedRoute userData={userData}> <Cart userData={userData}/> </ProtectedRoute>},
-    {path:'login',element:<Login saveUserData={saveUserData}/>},
-    {path:'product-details/:id',element: <ProtectedRoute userData={userData}> <ProductDetailes/> </ProtectedRoute>},
-
-    {path:'*' , element:<Notfound/>}
-  ]}
-])
-
+        { path: "*", element: <Notfound /> },
+      ],
+    },
+  ]);
 
   return (
     <>
-     <Offline><Disconnected/></Offline>
-    <ToastContainer theme='colored'
-    style={{ marginTop:50 }}/>
+      <Offline>
+        <Disconnected />
+      </Offline>
+      <ToastContainer theme="colored" style={{ marginTop: 50 }} />
 
-    <CartContextProvider userData={userData}>
-      <Toaster
-     toastOptions={{
-      style: {
-        background: '#363636',
-        color: '#fff',
-        marginTop:50
-      },
-    }}
-      />
-      <RouterProvider router={Routes}/>
-    </CartContextProvider>
+      <CartContextProvider>
+        <Toaster
+          toastOptions={{
+            style: {
+              background: "#363636",
+              color: "#fff",
+              marginTop: 50,
+            },
+          }}
+        />
+        <RouterProvider router={Routes} />
+      </CartContextProvider>
     </>
-  )
+  );
 }

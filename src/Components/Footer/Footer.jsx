@@ -6,7 +6,6 @@ export default function Footer() {
      <footer className='bg-main-light  my-5 py-3 mb-auto'>
    <div className="container">
    <h2>Get the FreshCart app</h2>
-    {/* <p className='text-muted'>We will send you a link,open it on your phone to download the app.</p> */}
     <p className='text-muted'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, blanditiis?</p>
     <form>
       <div className="row">
